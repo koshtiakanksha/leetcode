@@ -20,4 +20,7 @@ class Solution:
             for c in range(columns):
                 area = max(area, dfs(r,c))   #since we need to find the maximum area
         return area
-        
+    
+    # time complexity = O(m*n)      (dimensions of the matrix)
+    # it is a worst case scenario, if we have to go through each cell
+    # space complexity = O(m*n)
