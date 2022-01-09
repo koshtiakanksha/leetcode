@@ -6,4 +6,6 @@ class Solution:
             if diff in HashMap:                 #to check if the diff is present in nums(list)
                 return [HashMap[diff], i]          #to return indices of n and the diff
             HashMap[n] = i                #update the hashmap in case the solution isn't found
-                                        #
+        return                                    #the code works just fine without this line.
+                                                     #add this line of code in case nums don't 
+                                                     #contain required pair of integers
