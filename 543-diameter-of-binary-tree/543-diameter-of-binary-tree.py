@@ -16,3 +16,6 @@ class Solution:
             return 1+max(left, right)                    # height running through the root
         dfs(root)                                       # call it for root
         return res[0]                                  # returning the maximum value
+    
+    
+# time complexity O(n)
