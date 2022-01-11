@@ -31,3 +31,5 @@ class Solution:
                             fresh -= 1                    # decrease the no. of fresh oranges
                             q.append((r, c))           # add to the deque
         return time if fresh == 0 else -1            
+    
+    # time complexity -> O (n)
