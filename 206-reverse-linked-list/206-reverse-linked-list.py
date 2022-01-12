@@ -5,14 +5,17 @@
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head:                   # if it is an empty listnode
-            return None
-        newhead = head                
-        if head.next:                 # if the next element to the current ne exists
-            newhead = self.reverseList(head.next)        # call a function for head.next
-            head.next.next = head          
-        head.next = None               # point it to null to avoid endless loop
-        return newhead
+        prev = None
+        curr = head                                      # initializing the pointers
+        while curr:                                  # while there are elements to reverse
+            nxt = curr.next                      
+            curr.next = prev
+            prev = curr                            # reversing the elements
+            curr = nxt
+        return prev
+    
+    # time complexity = O(n)
+    # space complexity = O(1)
     
     # time complexity = O(n)
     # space complexity = O(n)
