@@ -1,11 +1,20 @@
 class Solution:
     def isPowerOfTwo(self, n: int) -> bool:
         if n == 0:              # since zero cannot be the power of two, we return False
-            return False
-        while n % 2 == 0: # we stop once the val != 0, because then it can't be the power of 2
-            n = n / 2      # we update the value of n to avoid endless loop
-        return n == 1       # return true if, in the end/ outside the while loop, n==1
+            return False 
+        
+    # we are going to convert the given decimal, n, into binary number. (1) 
+    # Then we are going to take the compliment of that binary number. Add one to it (2)
+    # Then do the & operation on eqn (1) and(2)
     
-    # time complexity= O(logN)
+        return (n & -n == n)
+    
+    # for example: if n= 6: 0110 
+    # complement of 6 + 1 : 1010 =  1001 + 0001
+    # using & op on both  : 0010
+    
+    
+    # time complexity= O(1)
+    # space complexity = O(1)
         
         
