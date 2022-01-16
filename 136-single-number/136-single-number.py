@@ -1,13 +1,16 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        dummy = []                              # create an empty list
-        for i in nums:
-            if i not in dummy:         # we add i to dummy if i is not already in it
-                dummy.append(i)
-            else:                      # we remove i if it is in dummy
-                dummy.remove(i)
-        return dummy.pop()            # we return the one element in the list
-        
+        a = 0                  # initially we set a equals to 0
+        for i in nums:         # then we iterate through every element in the list
+            a = a ^ i          # then we XOR a with i to find the unique number.
+        return a               # return the unique number
+    
+    
+    # XOR: XOR all bits together to find the unique number.
+
+# XOR : a (XOR) 0 = a, a (XOR) a = 0
+# nums = [2,2,1] -> 0 (XOR) 2 = 2, 2 (XOR) 2 = 0, 0 (XOR) 1 = 1
+    
         
 # time complexity: O(n^2)
 # space complexity: O(n)
