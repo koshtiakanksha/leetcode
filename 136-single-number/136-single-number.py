@@ -12,5 +12,5 @@ class Solution:
 # nums = [2,2,1] -> 0 (XOR) 2 = 2, 2 (XOR) 2 = 0, 0 (XOR) 1 = 1
     
         
-# time complexity: O(n^2)
-# space complexity: O(n)
+# time complexity: O(n)
+# space complexity: O(1)
