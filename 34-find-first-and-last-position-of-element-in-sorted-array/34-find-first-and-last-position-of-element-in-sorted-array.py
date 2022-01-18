@@ -1,36 +1,25 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         
-        lower = self.findBound(nums, target, True)
-        if (lower == -1):
-            return [-1, -1]
-        
-        upper = self.findBound(nums, target, False)
-        
-        return [lower, upper]
-        
-    def findBound(self, nums: List[int], target: int, isFirst: bool) -> int:
-        
-        N = len(nums)
-        start, end = 0, N - 1
-        while start <= end:
-            mid = int((start + end) / 2)    
-            
-            if nums[mid] == target:
-                
-                if isFirst:
-                    if mid == start or nums[mid - 1] < target:
-                        return mid
-                    end = mid - 1
-                else:
-                    if mid == end or nums[mid + 1] > target:
-                        return mid
-                    start = mid + 1
-            
-            elif nums[mid] > target:
-                end = mid - 1
+        left = self.binarySearch(nums, target, True)
+        right = self.binarySearch(nums, target, False)
+        return [left, right]
+    
+    def binarySearch(self, nums, target, leftbias):
+        l = 0
+        r = len(nums)- 1
+        i = -1
+        while l <= r:
+            m = (l+r)//2
+            if target > nums[m]:
+                l = m + 1
+            elif target< nums[m]:
+                r = m-1
             else:
-                start = mid + 1
-        
-        return -1
+                i = m
+                if leftbias:
+                    r = m-1
+                else:
+                    l = m+1
+        return i
         
