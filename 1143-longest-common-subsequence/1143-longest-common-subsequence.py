@@ -9,3 +9,6 @@ class Solution:
                 else:                            # if both aren't same
                     dp[i][j] = max(dp[i][j+1], dp[i+1][j])   # take max of right & down
         return dp[0][0]
+    
+    # time complexity = O(m*n)
+    # space complexity = O(m*n)
