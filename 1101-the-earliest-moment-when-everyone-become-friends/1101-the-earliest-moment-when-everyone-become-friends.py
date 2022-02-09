@@ -54,3 +54,7 @@ class UnionFind:
             self.rank[group_b] += 1
 
         return is_merged
+    # Time Complexity: O(N+MlogM+Mα(N))
+    # Space Complexity: O(N+M) or O(N+logM)
+    
+    
