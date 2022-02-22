@@ -6,3 +6,6 @@ class Solution:
             result = result * 26
             result += alphabets.index(columnTitle[i].lower()) 
         return result
+    
+    # time complexity = O(N)
+    # space complexity = O(1)
