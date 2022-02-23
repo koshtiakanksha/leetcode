@@ -4,4 +4,7 @@ class Solution:
             if i == arr[i]:
                 return i
         return -1
+    
+    # time complexity = O(N)
+    # space complexity = O(1)
         
