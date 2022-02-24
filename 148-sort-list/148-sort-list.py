@@ -17,3 +17,6 @@ class Solution:
         nodes[-1].next = None
         
         return nodes[0]
+    
+    # time complexity = O(N)
+    # space complexity = O(1)
