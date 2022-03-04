@@ -1,14 +1,14 @@
 class Solution:
     def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:
-        A = [[0] * k for k in range(1, 102)]
-        A[0][0] = poured
+        A = [[0] * k for k in range(1, 102)]     # [[0], [0, 0], [0, 0, 0], .....]
+        A[0][0] = poured           # the value at zeroth index of the first list in A
         
-        for i in range(query_row + 1):
-            for c in range(i + 1):
-                q = (A[i][c] - 1.0) / 2.0
+        for i in range(query_row + 1):           # iterate through the range
+            for c in range(i + 1):               # iterate through the range
+                q = (A[i][c] - 1.0) / 2.0        # since it will fall off in two glasses
                 
                 if q > 0:
-                    A[i+1][c] += q
+                    A[i+1][c] += q              # update the values
                     A[i+1][c+1] += q
                     
         return min(1, A[query_row][query_glass])
