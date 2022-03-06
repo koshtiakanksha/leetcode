@@ -30,4 +30,5 @@ class Solution:
 
         return new_root
     
-    
+    # time complexity = O(M)
+    # space complexity = O(M)
