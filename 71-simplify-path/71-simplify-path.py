@@ -13,3 +13,6 @@ class Solution:
                 stack.append(portion)
         result = "/" + "/".join(stack)
         return result
+    
+    # time complexity = O(N)
+    # space complexity = O(N)
