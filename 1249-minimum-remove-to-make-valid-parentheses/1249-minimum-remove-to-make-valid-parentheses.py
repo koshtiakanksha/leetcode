@@ -19,4 +19,5 @@ class Solution:
                 string_builder.append(c)
         return "".join(string_builder)
             
-        
+        # time complexity = O(N)
+        # space complexity = O(1)
