@@ -12,4 +12,7 @@ class Solution:
                 stack.append(c)
         return ''.join(stack)
 
+    
+    # time complexity = O(N)
+    # space complexity = O(1)
         
