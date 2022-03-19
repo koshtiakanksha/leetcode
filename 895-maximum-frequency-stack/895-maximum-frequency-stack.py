@@ -27,4 +27,5 @@ class FreqStack:
 # param_2 = obj.pop()
 
 
-# time complexity 
+# time complexity = O(1)
+# space complexity = O(N)
