@@ -19,3 +19,7 @@ class Solution:
         else:
             return check(bottoms[0])
         
+        
+        # time complexity = O(N)
+        # space complexity = O(1)
+        
