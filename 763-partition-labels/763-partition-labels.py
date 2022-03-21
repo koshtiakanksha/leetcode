@@ -10,4 +10,7 @@ class Solution:
                 anchor = i + 1
             
         return ans
+    
+    # time complexity = O(N)
+    # space complexity = O(1)
         
