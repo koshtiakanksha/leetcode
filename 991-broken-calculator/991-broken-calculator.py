@@ -10,4 +10,5 @@ class Solution:
 
         return ans + startValue - target
     
-        
+        # time complexity = O(logTarget)
+        # space complexity = O(1)
