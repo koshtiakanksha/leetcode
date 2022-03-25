@@ -8,5 +8,8 @@ class Solution:
         for i in range(n):
             total += costs[i][0] + costs[n+i][1]
         return total
+    
+    # time complexity = O(N*logN)
+    # space complexity = O(1)
             
         
