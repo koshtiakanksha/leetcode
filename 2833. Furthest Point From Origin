@@ -1,0 +1,46 @@
+class Solution:
+    def furthestDistanceFromOrigin(self, moves: str) -> int:
+        # three cases
+
+        # case 1: R and L are absent. which means 
+        # moves= "_"*n, so farthest point can be for sequence
+        # "L"*n or 'R'*n which is n
+        if 'R' not in moves and 'L' not in moves:
+            result = len(moves)
+
+        # case 2: if all three types of characters available
+        # this can be made a bit simpler
+        elif '_' in moves:
+            distance = [] 
+            m = [moves[:moves.index('_')]] #upto the first '_'
+            for i in range(moves.index('_'), len(moves)): # from first '_' to end
+                if moves[i] == 'L':
+                    m = [j + 'L' for j in m] # just simply append L or R
+                elif moves[i] == 'R':
+                    m = [j + 'R' for j in m]
+                else:
+                    mL = [j + 'L' for j in m] # if it is '_', we will add
+                    mR = [j + 'R' for j in m] # both possibilities
+                    m =mL + mR      # [previous string + 'L', previous string + 'R']
+            for i in range(len(m)): # m: permutation of all the possibilties
+                d = 0               # just find the distance by L means -1 and R means +1
+                for j in m[i]:      # we have replaced '_' by 'L'and 'R'
+                    if j == 'L':
+                        d -= 1
+                    else:
+                        d += 1          # distance can be only positive val
+                distance.append(abs(d)) # consider only the max from
+            result = max(distance)   # all the distances of permutation
+        
+        # case 3: we don't have a single '_' in our string, sol is preety straight forward
+        else:
+            distance = 0
+            for i in range(len(moves)):
+                if moves[i] == 'L':
+                    distance -= 1
+                else:
+                    distance += 1
+            result = abs(distance)
+        return result
+        
+        
